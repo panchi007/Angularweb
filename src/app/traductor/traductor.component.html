@@ -1,0 +1,50 @@
+<div class="container">
+    <form>
+
+        <div style="color: #33CAFF; background-color: #033F54;" class="row">
+            <button class="col-sm-6 col-md-3"> <img src="/assets/imagenes/idioma-en-ingles.png" alt="" (click)="cambiaelidiomaingles()" > ingles</button>
+            <button class="col-sm-6 col-md-3"> <img src="/assets/imagenes/espana.png" alt="" (click)="cambielidiomaespan()" > españa</button>
+            <button class="col-sm-6 col-md-3"> <img src="/assets/imagenes/bandera.png" alt="" (click)="cambiaelidiomafrance()" > francia </button>
+            <button class="col-sm-6 col-md-3"> <img src="/assets/imagenes/italia.png" alt="" > italia </button>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                placeholder="escriba aqui" [(ngModel)]="loqueentra" name="loqueentra"></textarea>
+        </div>
+
+
+        <div style="color: #33CAFF; background-color: #033F54;" class="row">
+            <button class="col-sm-6 col-md-3"> <img src="/assets/imagenes/idioma-en-ingles.png" alt="" (click)="cambiaelidiomaingles1()" > ingles</button>
+            <button class="col-sm-6 col-md-3"> <img src="/assets/imagenes/espana.png" alt="" (click)=" cambielidiomaespan2()" > españa</button>
+            <button class="col-sm-6 col-md-3"> <img src="/assets/imagenes/bandera.png" alt="" (click)=" cambiaelidiomafrance3()" > francia </button>
+            <button class="col-sm-6 col-md-3"> <img src="/assets/imagenes/italia.png" alt="" > italia </button>
+        </div>
+        <hr>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)=" converttraduc()" >TRADUCIR</button>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                *ngFor="let val of valor">{{val.output}}</textarea>
+        </div>
+
+        <div class="row">
+            <button>
+                <div class="col"> <img src="/assets/imagenes/copiar-el-simbolo-de-interfaz-de-dos-hojas-de-papel.png"
+                        alt=""></div>
+            </button>
+            <button>
+                <div class="col"> <img src="/assets/imagenes/borrador.png" alt=""></div>
+            </button>
+            <button>
+                <div class="col"> <img src="/assets/imagenes/boton-salir-a-la-aplicacion.png" alt=""></div>
+            </button>
+        </div>
+
+        <hr>
+
+    </form>
+
+</div>

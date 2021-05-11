@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-sm-12 col-md-9">
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header text-white text-center bg-danger">
+                            <h5 class="card-title">Evolucion de la Pandemia Covid19</h5>
+                        </div>
+                        <div class="card-body" style="overflow-y: scroll;">
+                            <table class="table table-striped  " cellpadding="6">
+                                <thead>
+                                    <tr class="thead-darck bg-danger ">
+                                        <th>Pais</th>
+                                        <th *ngIf="tatalcase == true">Total Casos</th>
+                                        <th>Nuevos Casos</th>
+                                        <th *ngIf="recuperados == true">Total Recuperados</th>
+                                        <th *ngIf="fallecidos == true">Total Fallecidos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngIf="cambiador3  ">
+                                        <td>{{cambiador3.Country_text}}</td>
+                                        <td *ngIf="tatalcase == true">{{cambiador3["Total Cases_text"]}}</td>
+                                        <td>{{cambiador3["New Cases_text"]}}</td>
+                                        <td *ngIf="recuperados == true">{{cambiador3["Total Recovered_text"]}}</td>
+                                        <td *ngIf="fallecidos == true">{{cambiador3["Total Deaths_text"]}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-12 col-md-3">
+        <aside>
+            <div class="card">
+                <div class="card-header text-white text-center bg-warning">
+                    <strong>Estadisticas Por Paises</strong>
+                </div>
+                <div class="card-body bg-light">
+                    <form>
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="txtDe">Elija un Pais</label>
+                                <select class="form-control" (change)='cambiante()' [(ngModel)]="cambiador"
+                                    name="cambiador">
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Brazil">Brasil</option>
+                                    <option value="Chile">Chile</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tatalcase"
+                                        [(ngModel)]="tatalcase">
+                                    <label class="form-check-label" for="exampleCheck1">Total Casos</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck2"
+                                        [(ngModel)]="recuperados" name="recuperados">
+                                    <label class="form-check-label" for="exampleCheck2">Total Recuperados</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck3"
+                                        [(ngModel)]="fallecidos" name="fallecidos">
+                                    <label class="form-check-label" for="exampleCheck3">Total Fallecidos</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="text-white btn btn-dark"
+                                    (click)="obtenerpais()">Consultar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
